@@ -65,7 +65,7 @@ func TestTicker(t *testing.T) {
 }
 
 func TestQueryTime(t *testing.T) {
-	result, err := publicAPI.Query("Time", map[string]string{})
+	result, err := publicAPI.Query("Time", map[string]string{}, nil)
 	resultKind := reflect.TypeOf(result).Kind()
 
 	if err != nil {
@@ -79,7 +79,7 @@ func TestQueryTime(t *testing.T) {
 func TestQueryTicker(t *testing.T) {
 	result, err := publicAPI.Query("Ticker", map[string]string{
 		"pair": "XXBTZEUR",
-	})
+	}, nil)
 	resultKind := reflect.TypeOf(result).Kind()
 
 	if err != nil {
